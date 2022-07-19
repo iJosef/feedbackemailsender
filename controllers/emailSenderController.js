@@ -1,5 +1,7 @@
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
+// const path = require('path');
+// require("dotenv").config({ path: path.resolve(__dirname, '..', '.env') });
 require('dotenv').config();
 
 
@@ -93,8 +95,8 @@ exports.sendEmail = async (req, res) => {
         service: "gmail",
         auth: {
             // type: 'OAuth2',
-            user: 'devtestar101@gmail.com', // generated ethereal user
-            pass: 'gqjcgtbtzwuelmiq', // generated ethereal password
+            user: process.env.EMAIL, // generated ethereal user
+            pass: process.env.PASS, // generated ethereal password
             // clientId: process.env.OAUTH2_CLIENTID,
             // clientSecret: process.env.OAUTH2_CLIENT_SECRET,
             // refreshToken: process.env.OAUTH2_REFRESH_TOKEN,
